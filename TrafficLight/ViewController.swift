@@ -21,11 +21,32 @@ class ViewController: UIViewController {
         yellowView.layer.cornerRadius = yellowView.frame.width / 2
         greenView.layer.cornerRadius = greenView.frame.width / 2
         
+        redView.alpha = 0.3
+        yellowView.alpha = 0.3
+        greenView.alpha = 0.3
+        
         startButton.layer.cornerRadius = 10
     }
-
+    
     @IBAction func startButtonPressed() {
+        switchLight()
     }
     
+    func switchLight() {
+        
+        if redView.alpha == 1 {
+            redView.alpha = 0.3
+            yellowView.alpha = 1
+        } else if yellowView.alpha == 1 {
+            yellowView.alpha = 0.3
+            greenView.alpha = 1
+        } else if greenView.alpha == 1 {
+            greenView.alpha = 0.3
+            redView.alpha = 1
+        } else {
+            startButton.setTitle("NEXT", for: .normal)
+            redView.alpha = 1
+        }
+    }
 }
 
