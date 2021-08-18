@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet var redView: UIView!
     @IBOutlet var yellowView: UIView!
     @IBOutlet var greenView: UIView!
@@ -15,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         redView.layer.cornerRadius = redView.frame.width / 2
@@ -47,6 +49,8 @@ class ViewController: UIViewController {
             startButton.setTitle("NEXT", for: .normal)
             redView.alpha = 1
         }
+        
     }
+    
 }
 
